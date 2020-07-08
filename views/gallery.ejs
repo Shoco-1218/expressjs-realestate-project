@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>UltimoRealEstate</title>
+  <meta name="author" content="Shoko Yanagibashi Shoko.Yanagibashi@studytafensw.edu.au">
+  <link rel="stylesheet" href="property.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- text for main page and section  -->
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div>
+      <a href="../index.html"><img  src="../images/estate-logo.svg" width="300" height="100" alt="Ultimo Real Estate, Sydney, Australia" style = "margin-top: 10px;"></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../property" id = "current">Property of the Week</a></li>
+        <li><a href="../agents">Agents</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href= "../login">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+    
+    <div class = "subnav">
+      <a href = "../property"><p>&lt; back</p></a>
+      <p> Property > <%= address%></p>
+    </div>
+  
+    <main>
+
+      <div class="container">
+        <ul>
+        <li><img src = "../images/gobtn.png" id = "goBtn" onclick = "restart()" alt = "slide animation starts"> </li>
+        <li><img src = "../images/stopbtn.png" id = "stopBtn" onclick = "stop()" alt = "slide animation starts"> </li>
+        </ul>
+        <a href = ""><img src = "../images/<%= houseImage%>" id = "adBanner" style="width:100%" alt = "house pic"></a>
+      </div>
+      
+        <div class="row">
+          <div class="column" >
+            <img class="demo cursor" src="../images/<%= houseImage%>" style="height: 150px; width: 100%;" onclick="currentSlide(1)" id = "rowImages" alt="Outside">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="../images/inside1.jpg" style="height: 150px; width: 100%;" onclick="currentSlide(2)" id = "rowImages" alt="Inside design">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="../images/inside2.jpg" style="height: 150px; width: 100%;" onclick="currentSlide(3)" id = "rowImages" alt="Bed Room">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="../images/inside3.jpg" style="height: 150px; width: 100%;" onclick="currentSlide(4)" id = "rowImages" alt="Bath Room">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="../images/inside4.jpg" style="height: 150px; width: 100%;" onclick="currentSlide(5)" id = "rowImages" alt="Bed Room">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="../images/inside5.jpg" style="height: 150px; width: 100%;" onclick="currentSlide(6)" id = "rowImages" alt="kitchen">
+          </div>
+        </div>
+      </div>
+
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+    
+      <h2 class = "margin text"><%= address%></h2><br>
+
+      <!-- description od houses -->
+      <div id = "flex" >
+        <!-- left side -->
+        <div id = "column1">
+          <p class = "icons"><img src = "../images/bed.png" alt = "icons"><%= bed %><img src = "../images/shower.png" alt = "icons"><%= shower %><img src = "../images/car.png" alt = "icons"><%= car %>  |  <img src = "../images/planner.png" alt = "icons"> <%= inspection %></p>
+
+          <p class = "margin">Living is easy in this freshly schemed freestanding home in a quiet cul-de-sac a short stroll Featuring a 15m street frontage and double parking, the three bedroom home's fluid villa-like layout is ideal for the young family or downsizer with sun-filled living space opening to a landscaped north facing garden. One of only a handful of homes in a peaceful enclave with no-through traffic, the immaculately presented home is 850m to nearest station and town centre with close proximity to historic sydney Park. In the heart of the inner west, sydney is on the brink of a boom with close proximity, excellent transport links and great schools.<br><br>
+
+            - Double fronted freestanding home in a quiet cul-de-sac<br>
+            - Modern light-filled interiors, easy indoor/outdoor flow<br>
+            - 3 bedrooms with built-ins, 2 with a tranquil garden outlook<br>
+            - Large main bedroom, 2 way bathroom and a powder room<br>
+            - Spacious living and dining featuring easycare timber floors<br>
+            - Terrace and a level landscaped garden bathed in sunshine<br>
+            - Granite kitchen with Smeg gas cooker, plentiful bench space<br>
+            - Full size laundry, downlights, plush carpeting<br>
+            - Lock-up garage plus off street parking, stroll to city buses<br>
+            - Walk to the soon-to-be-completed Aquatic Centre<br>
+          </p>
+          
+        </div>
+        <!-- right side -->
+        <div id = "column2">
+          <ul>
+            <li><p style = "margin-top: 10px;"><%= name%></p></li>
+            <li><a href = "#"><img src = "../images/<%= agents_photo%>" width = "70" height="70" style = "border-radius: 50%; margin: 10px;" alt = "agency-photo"></a></li>
+            <li><button ><img src = "../images/phone.png" alt = "phone-icon"> call </button></li>
+            <li><p style = "padding-top: 30px;">Ultimo Real Estate</p></li>
+          </ul>
+          <div class = "gmap margin text">
+            <p><img src = "../images/house.png" alt = "icons"> | <%= address %></p><br>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2745.5144606993504!2d151.20549893317832!3d-33.87740160551429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae3cc9d8039b%3A0x1b0bd5dd57af495f!2sWorld%20Square!5e0!3m2!1sen!2sau!4v1585693877945!5m2!1sen!2sau" width="300" height="300" allowfullscreen="" aria-hidden="false" tabindex="0"  ></iframe>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    
+    <footer>
+      <ul>
+        <li>&copy; 2020 Ultimo Real Estate, Inc. Shoko. </li>      
+        <li><a href="www.instagram.com/UltimoRealEstate"><img src="../images/instagram.png" width="30" height="30" alt="Ultimo Real Estate on Instagram"></a></li>
+        <li><a href="www.twitter.com/UltimoRealEstate"><img src="../images/twitter.png" width="30"    height="30" alt="Ultimo Real Estate on Twitter"></a></li>
+        <li><a href="legals.html">Legals</a></li>
+      </ul>
+    </footer>
+
+
+  <script src="gallery-script.js"></script>
+</body>
+</html>
+

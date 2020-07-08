@@ -1,0 +1,130 @@
+﻿/* font-coolor : 	color: #273149; */
+* {
+	margin: 0em;
+	padding: 0em;
+	font-size: 20px;
+	border-style: none;
+	list-style-type: none;
+	color: #273149;
+}
+body {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	background-color: #f6f7fb;
+	min-height: 100vh;		/*min of screen for any devices*/
+	position: relative;
+	padding-bottom: 100px;	/*height of footer*/
+	box-sizing: border-box;		/*min = includes footer*/
+}
+
+/* footer */
+footer {
+	position: absolute; 
+	bottom: 0;
+	width: 100%;
+	height: 100px;
+}
+footer ul {
+	display: flex;
+	justify-content: center;
+	padding-top: 50px;
+}
+footer a, footer li{
+	text-decoration: none;
+	color: #273149;
+	margin-right: 10px;
+	
+}
+
+/* landing page */
+.wrapper{
+	/*gradietion top-bottom, (90deg, #FFC0CB 50%, #00FFFF 50%) = sideway, 2 different colors  */
+	background: linear-gradient( #EAC85E,  #f6f7fb);		
+}
+.wrapper header{
+	margin-top: 10px;
+	display: flex;
+	justify-content: space-between;
+}
+.wrapper nav li {
+	display: inline-block;
+	margin-right: 10px;
+	margin-top: 50px;
+	text-align: end;
+}
+.wrapper nav a{
+	font-size: 20px;
+	color: white;
+	text-decoration: none;
+}
+.wrapper nav a:hover, #current{
+	border-bottom: 1px solid white;
+}
+.mainpic{
+	margin: 0 auto;
+	width: 1000px;
+}
+.mainpic img{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#box, #box h1{
+	height: 300px;
+	width: 100%;
+	position: relative;
+	top: 0;
+	padding-top: 30px;
+	text-align: center;
+	align-items: center;
+	font-family: 'Kaushan Script', cursive;
+	font-size: 3rem;
+	color: white;
+	transition: all 2s ease;
+}
+main{
+	position: relative;
+}
+.mainpic h2{
+	font-family: 'Kaushan Script', cursive;
+	font-size: 2.5em;
+	color: #273149; 
+	border-bottom: 1px solid rgb(243, 205, 35) ;
+	cursor: pointer;
+}
+.mainpic h2:hover{
+	opacity: 0.5;
+}
+.section{
+	margin-top: 100px;
+	display: flex;
+	background:rgb(231, 146, 77);
+	align-items: center;
+	justify-content: center;
+}
+
+.section-text h2{
+	font-family: 'Caveat', cursive;
+	font-size : 3rem;
+	margin-right: -1rem;
+	position: relative;
+}
+.us{
+	margin-top: 40px;
+	margin-right: 40px;
+	padding: 10px;
+	background-color: #273149;
+	color: #f6f7fb;
+	font-family: 'Caveat', cursive;
+	width: 300px;
+	border-radius: 10px;
+	cursor: pointer;
+	opacity: 0.9;
+}
+.us::after{
+	content: ">";
+	float: right;
+}
+.us:hover{
+	opacity: 0.5;
+}
+

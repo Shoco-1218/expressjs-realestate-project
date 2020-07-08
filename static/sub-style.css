@@ -1,0 +1,463 @@
+/* font-coolor : 	color: #273149; */
+* {
+	margin: 0em;
+	padding: 0em;
+	font-size: 20px;
+	border-style: none;
+	list-style-type: none;
+	color: #273149;
+}
+body {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: #f6f7fb;
+	min-height: 100vh;		/*min of screen for any devices*/
+	position: relative;
+	padding-bottom: 100px;	/*height of footer*/
+	box-sizing: border-box;		/*min = includes footer*/
+}
+.wrapper{
+  display: flex;
+  justify-content: center;
+}
+h1{
+  font-family: 'Kaushan Script', cursive;
+	font-size : 2rem;
+}
+
+/* footer */
+footer {
+	position: absolute; 
+	bottom: 0;
+	width: 100%;
+	height: 100px;
+}
+footer ul {
+	display: flex;
+	justify-content: center;
+	padding-top: 50px;
+}
+footer a, footer li{
+	text-decoration: none;
+	color: #273149;
+	margin-right: 10px;
+	
+}
+
+/* nav section  */
+header{
+	padding-bottom: 10px;
+	display: flex;
+	justify-content: space-between;
+	background: #EAC85E;
+}
+nav li {
+	display: inline-block;
+	margin-right: 10px;
+	margin-top: 50px;
+	text-align: end;
+}
+nav a{
+	font-size: 20px;
+	color: white;
+	text-decoration: none;
+}
+nav a:hover, #current{
+	border-bottom: 1px solid white;
+}
+
+/* Property */
+.grid-container3, #addPropertySpace{
+	display: grid;
+	grid-template-columns: 400px 400px 400px;
+	grid-gap: 20px;
+	padding: 10px;
+	margin: 0 auto;
+}
+.grid-container3 div, #addPropertySpace div{
+	background: white;
+	text-align: left;
+	padding: 5px;
+	border-radius: 10px;
+	margin-top: 30px;
+}
+.grid-container3 h4, #addPropertySpace h4{
+	padding-top: 20px;
+}
+.obi{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	background:  rgb(52, 56, 82);
+	color: white;
+}
+.obi img{
+	margin: 5px;
+	padding-left: 10px;
+}
+.icons img, .inspe img{
+	padding: 5px;
+}
+.inspe{
+	display: flex;
+	float: left;
+	align-items: center;
+}
+.border{
+	border: 2px solid  rgb(52, 56, 82);
+	margin: 20px auto;
+}
+.addProperty{
+	padding: 30px;
+	margin: 10px auto;
+	width: 500px;
+	text-align: right;
+	border-radius: 8px;
+}
+.marginTop{
+	margin-top: 20px;
+}
+.addProperty button{
+	margin-top: 20px;
+	border-radius: 10px;
+	padding: 5px;
+	background: #273149; 
+	color: white;
+	width: 50%;
+	cursor: pointer;
+}
+
+
+/* buy-sell grid */
+.grid-container2{
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-gap: 20px;
+	padding: 10px;
+	margin: 0 auto;
+}
+.grid-container2 div{
+	background: white;
+	text-align: left;
+	padding: 5px;
+	border-radius: 10px;
+	margin-top: 30px;
+}
+.imgs img{
+	display: flex;
+	margin: 0 auto;
+}
+.grid-container2 h4{
+	padding-top: 20px;
+}
+.icons{
+	display: flex;
+	align-items: center;
+}
+.icons img{
+	margin: 0;
+}
+.grid-container2 .logos{ 
+	background: blue;
+	color: white;
+	width: 9%;
+	text-align: center;
+}
+.grid-container2 .logos2{ 
+	background: yellowgreen;
+	color: white;
+	width: 11%;
+	text-align: center;
+}
+.right{
+	float: right;
+}
+
+/* FQ */
+.accbox{
+	max-width: 800px;
+	margin: 100px auto 0px auto;
+	z-index: 2;
+}
+.accbox label{
+	display: block;
+	padding: 10px 10px 0 10px;
+	color: #273149;
+	font-size: 18px;
+	transition: all 0.5s;
+	display: flex;
+	justify-content: space-between;
+}
+hr {
+  border: dashed 1px gray;             
+  height: 1px;
+}
+.accbox label::after{
+	content: '\f107';  
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	font-size: 40px;
+	color: red;
+}
+.accbox label:hover{
+	opacity: 0.5;
+	cursor: pointer;
+}
+.accbox input{
+	display: none;
+}
+.accbox .insidebox{
+	height: 0;
+	padding: 0;
+	overflow: hidden;
+	transition: 0.5s;
+}
+.inputclass:checked + label + .insidebox{
+	height: auto;
+	padding: 5px;
+	font-size: 20px;
+	opacity: 1;
+	color: #111111;
+	background: #ffffff;
+}
+.accbox .insidebox p{
+	margin: 15px 10px;
+}
+.inputclass:checked + label::after{
+	content: '\f106';  
+} 
+
+/* agents grid */
+.grid-container{
+	display: grid;
+  grid-template-columns: auto auto auto;
+  width: 1000px;
+  grid-gap: 20px;
+  background-color: #f6f7fb;
+	padding: 10px;
+	margin: 0 auto;
+}
+.grid-container > div {
+  background-color: #f6f7fb;
+  text-align: center;
+  padding: 20px 0;
+	font-size: 30px;
+	border-radius: 10px;
+}
+.grid-container img{
+	border-radius: 10px;
+}
+main h1{
+	padding-top: 40px;
+}
+main h4{
+	font-size: 20px;
+}
+main p{
+	padding: 5px;
+	font-size: small;
+}
+.agencys{
+	text-align: center;
+  margin-bottom: 20px;
+  background-color: #f6f7fb;
+}
+#agentBtn{
+	padding: 10px;
+	border-radius: 5px;
+	background-color: #273149;
+	color: white;
+	cursor: pointer;
+	display: block;
+	margin: 20px auto;
+}
+#agentBtn:hover{
+	opacity: 0.7;
+}
+#agentMember{
+	display: grid;
+  grid-template-columns: auto auto auto;
+  width: 1000px;
+  grid-gap: 20px;
+  background-color: #f6f7fb;
+	padding: 10px;
+	margin: 0 auto;
+	margin-bottom: 30px;
+}
+#agentMember > div {
+  background-color: #f6f7fb;
+  text-align: center;
+  padding: 20px 0;
+	font-size: 30px;
+	border-radius: 10px;
+}
+#agentMember img{
+	border-radius: 10px;
+}
+
+
+/* suburb */
+#suburb {
+  margin: 30px auto;
+  width: 1000px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 50px;
+  justify-content: space-evenly;
+}
+.suburb-card{
+  background-color: white;
+  text-align: center;
+  margin: 20px;
+  padding: 20px 0;
+  font-size: 30px;
+  width: 250px;
+  border-radius: 10px;
+	line-height: 1.6;
+}
+.suburb-card img{
+  border-radius: 10px;
+  cursor: pointer;
+}
+.suburb-card img:hover{
+  width: 210px;
+  height: 210px;
+  transition: 0.5s ease;
+  opacity: 0.8;
+}
+
+/* contact form */
+.contact-main{
+  display: flex;
+  justify-content: space-around;
+}
+section ul {
+	margin-top: 20px;
+	line-height: 1.5em;
+}
+figure {
+	width: 990px;
+	margin: auto;
+	margin-top: 40px;
+}
+#col1 img, iframe {
+	margin-top: 40px;
+}
+#col1, #col2 h1{
+  text-align: center;
+}
+form:not(.addProperty form) {
+	margin-top: 30px;
+	background-color: white;
+	padding: 10px 30px 30px 30px;
+	letter-spacing: 2px;
+	border-radius: 5px;
+}
+fieldset {
+	margin-top: 10px;
+	font-weight: bold;
+}
+input {
+	border: 1px solid #273149;
+	padding: 5px;
+	border-radius: 4px;
+}
+form p {
+	margin-top: 4px;
+	font-size: 12px;
+}
+#name, #mobile, #email {
+	width:400px;
+}
+textarea {
+	font-family: helvetica, calibri, sans-serif;
+	margin-top: 10px;
+	max-width:340px;
+	min-width:340px;
+	border: 1px solid #273149;
+}
+.submitBtn{
+	display: block;
+	margin-top: 20px;
+	cursor: pointer;
+	text-align: center;
+}
+.submitBtn:hover{
+	opacity: 0.8;
+}
+.forms i{
+	position: absolute;
+	visibility: hidden;
+}
+.forms small{
+	visibility: hidden;
+	padding-top: 5px;
+	font-size: 15px;
+}
+.forms{
+	padding-top: 15px;
+}
+.forms.success input{
+	border-color: rgb(24, 177, 24);
+}
+.forms.success i.fa-check-circle{
+	color: rgb(24, 177, 24);
+	visibility: visible;
+}
+.forms.error input{
+	border-color: rgb(245, 31, 31);
+}
+.forms.error i.fa-exclamation-circle{
+	color: rgb(245, 31, 31);
+	visibility: visible;
+}
+.forms.error small{
+	color: rgb(245, 31, 31);
+	visibility: visible;
+}
+
+/* Login-Register page */
+#loginMain{
+	background-image: url('images/home-entrance.jpg');
+  background-size: cover;
+	height: 870px;
+}
+#loginMain h1{
+	text-align: center;
+	color: white;
+}
+.display{
+	display: flex;
+	justify-content: space-around;
+}
+.login form{
+	margin-top: 60px;
+	padding: 20px;
+}
+.login .loginForm{
+	padding-top: 20px;	
+}
+.loginForm label{
+	margin-top: 10px;
+}
+.login button, #logout button{
+	margin-top: 20px;
+	border-radius: 10px;
+	padding: 5px;
+	background: #273149; 
+	color: white;
+	width: 100%;
+	cursor: pointer;
+}
+.login form{
+	background: rgba(245, 241, 241, 0.8);
+}
+#success{
+	text-align: center;
+	background-image: url(./images/sydney.jpg);
+	background-size: cover;
+	height: 870px;
+}
+#success > h4 {
+	padding-top: 50px;
+	color: white;
+}
