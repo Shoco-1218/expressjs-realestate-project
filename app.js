@@ -31,7 +31,6 @@ app.post('/login', logAndRegister.login);
 app.post('/logout', logAndRegister.logout);
 
 
-
 app.use(express.static('static'));
 
 
