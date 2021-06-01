@@ -10,11 +10,12 @@
   <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
 </head>
-
 <body>
   <header>
     <div>
-      <a href="../index.html"><img  src="../images/estate-logo.svg" width="300" height="100" alt="Ultimo Real Estate, Sydney, Australia" style = "margin-top: 10px;"></a>
+      <a href="../index.html">
+        <img  src="../images/estate-logo.svg" width="300" height="100" alt="Ultimo Real Estate, Sydney, Australia" style = "margin-top: 10px;">
+      </a>
     </div>
     <nav>
       <ul>
@@ -27,22 +28,24 @@
       </ul>
     </nav>
   </header>
-    
     <div class = "subnav">
       <a href = "../property"><p>&lt; back</p></a>
       <p> Property > <%= address%></p>
     </div>
-  
     <main>
-
       <div class="container">
         <ul>
-        <li><img src = "../images/gobtn.png" id = "goBtn" onclick = "restart()" alt = "slide animation starts"> </li>
-        <li><img src = "../images/stopbtn.png" id = "stopBtn" onclick = "stop()" alt = "slide animation starts"> </li>
+          <li>
+            <img src = "../images/gobtn.png" id = "goBtn" onclick = "restart()" alt = "slide animation starts">
+          </li>
+          <li>
+            <img src = "../images/stopbtn.png" id = "stopBtn" onclick = "stop()" alt = "slide animation starts">
+          </li>
         </ul>
-        <a href = ""><img src = "../images/<%= houseImage%>" id = "adBanner" style="width:100%" alt = "house pic"></a>
+        <a href = "">
+          <img src = "../images/<%= houseImage%>" id = "adBanner" style="width:100%" alt = "house pic">
+        </a>
       </div>
-      
         <div class="row">
           <div class="column" >
             <img class="demo cursor" src="../images/<%= houseImage%>" style="height: 150px; width: 100%;" onclick="currentSlide(1)" id = "rowImages" alt="Outside">
@@ -64,21 +67,21 @@
           </div>
         </div>
       </div>
-
       <div class="caption-container">
         <p id="caption"></p>
       </div>
-    
       <h2 class = "margin text"><%= address%></h2><br>
-
-      <!-- description od houses -->
       <div id = "flex" >
-        <!-- left side -->
         <div id = "column1">
-          <p class = "icons"><img src = "../images/bed.png" alt = "icons"><%= bed %><img src = "../images/shower.png" alt = "icons"><%= shower %><img src = "../images/car.png" alt = "icons"><%= car %>  |  <img src = "../images/planner.png" alt = "icons"> <%= inspection %></p>
-
-          <p class = "margin">Living is easy in this freshly schemed freestanding home in a quiet cul-de-sac a short stroll Featuring a 15m street frontage and double parking, the three bedroom home's fluid villa-like layout is ideal for the young family or downsizer with sun-filled living space opening to a landscaped north facing garden. One of only a handful of homes in a peaceful enclave with no-through traffic, the immaculately presented home is 850m to nearest station and town centre with close proximity to historic sydney Park. In the heart of the inner west, sydney is on the brink of a boom with close proximity, excellent transport links and great schools.<br><br>
-
+          <p class = "icons">
+            <img src = "../images/bed.png" alt = "icons"><%= bed %>
+            <img src = "../images/shower.png" alt = "icons"><%= shower %>
+            <img src = "../images/car.png" alt = "icons"><%= car %>  |  
+            <img src = "../images/planner.png" alt = "icons"> <%= inspection %>
+          </p>
+          <p class = "margin">
+            Living is easy in this freshly schemed freestanding home in a quiet cul-de-sac a short stroll Featuring a 15m street frontage and double parking, the three bedroom home's fluid villa-like layout is ideal for the young family or downsizer with sun-filled living space opening to a landscaped north facing garden. One of only a handful of homes in a peaceful enclave with no-through traffic, the immaculately presented home is 850m to nearest station and town centre with close proximity to historic sydney Park. In the heart of the inner west, sydney is on the brink of a boom with close proximity, excellent transport links and great schools.
+            <br><br>
             - Double fronted freestanding home in a quiet cul-de-sac<br>
             - Modern light-filled interiors, easy indoor/outdoor flow<br>
             - 3 bedrooms with built-ins, 2 with a tranquil garden outlook<br>
@@ -90,14 +93,18 @@
             - Lock-up garage plus off street parking, stroll to city buses<br>
             - Walk to the soon-to-be-completed Aquatic Centre<br>
           </p>
-          
         </div>
-        <!-- right side -->
         <div id = "column2">
           <ul>
             <li><p style = "margin-top: 10px;"><%= name%></p></li>
-            <li><a href = "#"><img src = "../images/<%= agents_photo%>" width = "70" height="70" style = "border-radius: 50%; margin: 10px;" alt = "agency-photo"></a></li>
-            <li><button ><img src = "../images/phone.png" alt = "phone-icon"> call </button></li>
+            <li>
+              <a href = "#">
+                <img src = "../images/<%= agents_photo%>" width = "70" height="70" style = "border-radius: 50%; margin: 10px;" alt = "agency-photo">
+              </a>
+            </li>
+            <li>
+              <button ><img src = "../images/phone.png" alt = "phone-icon"> call </button>
+            </li>
             <li><p style = "padding-top: 30px;">Ultimo Real Estate</p></li>
           </ul>
           <div class = "gmap margin text">
@@ -107,8 +114,6 @@
         </div>
       </div>
     </main>
-
-    
     <footer>
       <ul>
         <li>&copy; 2020 Ultimo Real Estate, Inc. Shoko. </li>      
@@ -117,7 +122,6 @@
         <li><a href="legals.html">Legals</a></li>
       </ul>
     </footer>
-
 
   <script src="gallery-script.js"></script>
 </body>

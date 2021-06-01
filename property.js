@@ -5,11 +5,11 @@ const { promisify } = require('util');
 const readFileAsync = promisify(fs.readFile);
 
 function logInCookieTokenPayload(req) {
-  let cookie = req.header('Cookie');
-  const regex = /logInCookie\=([A-Za-z0-9\.\_\-]+)/;
-  let token = cookie.match(regex)[1];
-  let decoded;
   try{
+    let cookie = req.header('Cookie');
+    const regex = /logInCookie\=([A-Za-z0-9\.\_\-]+)/;
+    let token = cookie.match(regex)[1];
+    let decoded;
     decoded = jwt.verify(token, 'ShokoDIDit');
     return decoded;
   }catch{
@@ -52,9 +52,9 @@ function loggedIn2(withAgentsReplaced, tokenPayload, res){
           <div id="radio">
             1 <input type="radio" name="bed" value="1" >
             2 <input type="radio" name="bed" value="2" >
-            3 <input type="radio" name="bed" value="3" >    
-            4 <input type="radio" name="bed" value="4" >    
-            5 <input type="radio" name="bed" value="5" >    
+            3 <input type="radio" name="bed" value="3" >
+            4 <input type="radio" name="bed" value="4" >
+            5 <input type="radio" name="bed" value="5" >
           </div> 
         </div>
         <div class = "marginTop">
@@ -62,9 +62,9 @@ function loggedIn2(withAgentsReplaced, tokenPayload, res){
           <div id="radio">
             1 <input type="radio" name="shower" value="1" >
             2 <input type="radio" name="shower" value="2" >
-            3 <input type="radio" name="shower" value="3" >    
-            4 <input type="radio" name="shower" value="4" >    
-            5 <input type="radio" name="shower" value="5" >    
+            3 <input type="radio" name="shower" value="3" >
+            4 <input type="radio" name="shower" value="4" >
+            5 <input type="radio" name="shower" value="5" >
           </div> 
         </div>
         <div class = "marginTop">
@@ -72,9 +72,9 @@ function loggedIn2(withAgentsReplaced, tokenPayload, res){
           <div id="radio">
             1 <input type="radio" name="car" value="1" >
             2 <input type="radio" name="car" value="2" >
-            3 <input type="radio" name="car" value="3" >    
-            4 <input type="radio" name="car" value="4" >    
-            5 <input type="radio" name="car" value="5" >    
+            3 <input type="radio" name="car" value="3" >
+            4 <input type="radio" name="car" value="4" >
+            5 <input type="radio" name="car" value="5" >
           </div> 
         </div>
         <button type = 'submit' id = "addPropertyBtn">OK</button>
@@ -86,9 +86,9 @@ function loggedIn2(withAgentsReplaced, tokenPayload, res){
 }
 
 async function propertyMain(req, res){
-  let data;
+  let propertyFile;
   try{
-    data = await readFileAsync(__dirname + '/static/property.html', 'utf-8');
+    propertyFile = await readFileAsync(__dirname + '/static/property.html', 'utf-8');
   }catch{
     res.status(404).send('No page found!');
     res.end();
@@ -113,7 +113,7 @@ async function propertyMain(req, res){
         <br>
     </diV>`
   }
-  const withAgentsReplaced = data.replace(/@@@property@@@/g, str)
+  const withAgentsReplaced = propertyFile.replace(/@@@property@@@/g, str)
   let tokenPayload = logInCookieTokenPayload(req);
 
   if(tokenPayload && tokenPayload.role == 'agent'){
@@ -123,7 +123,6 @@ async function propertyMain(req, res){
     finish(withGreetingAndAgentsReplaced, res);
   }
 };
-
 
 // Individual property pages
 async function individualProperty(req, res){
@@ -146,7 +145,6 @@ async function individualProperty(req, res){
   });
   res.end();
 }
-
 
 // Add property feature
 const addProperty =  async function(req, res){
@@ -180,7 +178,6 @@ const addProperty =  async function(req, res){
   res.send (card);  
   res.end();
 }
-
 
 // Export
 module.exports.propertyMain = propertyMain;

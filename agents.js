@@ -2,7 +2,6 @@ const dbMysql = require('./mysql');
 const fs = require('fs');
 const jwt = require('jsonwebtoken');
 
-
 // For agents page
 function checkToken(req){
   let cookies = req.header('Cookie');
@@ -69,7 +68,6 @@ const agentsMain = function(req, res){
   })
 };
 
-
 // For more agents function
 const moreAgents = async function(req, res){
   const lastNumber = parseInt(req.query.id);
@@ -81,7 +79,7 @@ const moreAgents = async function(req, res){
       str += `
       <div>
         <img src = images/${rows[i].agents_photo} 
-              alt = "agen1" with = "200px" height = "200px">
+          alt = "agen1" with = "200px" height = "200px">
         <h4>${rows[i].name}</h4>
         <p>${rows[i].position}</p>
         <p><a href = "#">${rows[i].phone}</a></p>
@@ -95,7 +93,6 @@ const moreAgents = async function(req, res){
     return false;
   }
 }
-
 
 module.exports.agentsMain = agentsMain;
 module.exports.moreAgents = moreAgents;

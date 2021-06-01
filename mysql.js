@@ -16,3 +16,5 @@ const promisifiedQuery = function(sql, args){
 
 module.exports.connection = connection;
 module.exports.promisifiedQuery = promisifiedQuery;
+
+

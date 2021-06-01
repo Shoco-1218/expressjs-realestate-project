@@ -38,15 +38,17 @@ function validation(){
     setSuccessFor(bedroom);
   }
   valid ? alert('Thank you so much for your information') : false;
-}
+};
+
 function setErrorFor(input, message){
   const formControl = input.parentElement;
   const small = formControl.querySelector('small');
   small.innerHTML = message;
   formControl.className = 'forms error';
   return false;
-}
+};
+
 function setSuccessFor(input){
   const formControl = input.parentElement;
   formControl.className = 'forms success';
-}
+};

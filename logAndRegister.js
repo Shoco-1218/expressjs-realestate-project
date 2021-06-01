@@ -3,7 +3,6 @@ const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 const ejs = require('ejs');
 
-
 const register = async function(req, res){
   let yourName = req.body.name;
   let email = req.body.email;
@@ -25,7 +24,7 @@ const login = async function(req, res){
   let pass = req.body.password;
   let logHash = crypto.createHash('sha256').update(pass).digest('base64');
   const rows = await dbMysql.promisifiedQuery(`SELECT * FROM register WHERE name LIKE '${yourName}';`);
-  
+
   try{
     if(rows.length > 0 && rows[0].password == logHash){
       let token = jwt.sign({email: yourEmail, role: rows[0].role}, 'ShokoDIDit');
@@ -36,7 +35,7 @@ const login = async function(req, res){
   }catch(err){
     let message = 'Your log-in is not valid';
     res.send(message);
-  }       
+  }
 }
 
 const logout = function(req, res){

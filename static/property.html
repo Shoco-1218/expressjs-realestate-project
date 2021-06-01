@@ -11,11 +11,12 @@
   <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
 </head>
-
 <body>
   <header>
     <div>
-      <a href="index.html"><img  src="../images/estate-logo.svg" width="300" height="100" alt="Ultimo Real Estate, Sydney, Australia" style = "margin-top: 10px;"></a>
+      <a href="index.html">
+        <img  src="../images/estate-logo.svg" width="300" height="100" alt="Ultimo Real Estate, Sydney, Australia" style = "margin-top: 10px;">
+      </a>
     </div>
     <nav>
       <ul>
@@ -28,13 +29,11 @@
       </ul>
     </nav>
   </header>
-
   <main>
     <div class = "agencys">
       <h1>Property of the Week</h1><br>
       <p>Any question? CALL US : <a href = "#">(01)-2345-6789</a></p>
     </div>
-
     <div class = "wrapper">
       <div class = "grid-container3">
         @@@property@@@
@@ -44,57 +43,51 @@
       </div>
     @@@addForm@@@
   </main>
-  
-
   <footer>
-  <ul>
-    <li>&copy; 2020 Ultimo Real Estate, Inc. Shoko. </li>
-    <li><a href="www.facebook.com/UltimoRealEstate"><img src="images/facebook.png" width="30" height="30" alt="Ultimo Real Estate on Facebook"></a></li>
-    <li><a href="www.instagram.com/UltimoRealEstate"><img src="images/instagram.png" width="30" height="30" alt="Ultimo Real Estate on Instagram"></a></li>
-    <li><a href="www.twitter.com/UltimoRealEstate"><img src="images/twitter.png" width="30" height="30" alt="Ultimo Real Estate on Twitter"></a></li>
-    <li><a href="legals.html">Legals</a></li>
+    <ul>
+      <li>&copy; 2020 Ultimo Real Estate, Inc. Shoko. </li>
+      <li><a href="www.facebook.com/UltimoRealEstate"><img src="images/facebook.png" width="30" height="30" alt="Ultimo Real Estate on Facebook"></a></li>
+      <li><a href="www.instagram.com/UltimoRealEstate"><img src="images/instagram.png" width="30" height="30" alt="Ultimo Real Estate on Instagram"></a></li>
+      <li><a href="www.twitter.com/UltimoRealEstate"><img src="images/twitter.png" width="30" height="30" alt="Ultimo Real Estate on Twitter"></a></li>
+      <li><a href="legals.html">Legals</a></li>
     </ul>
   </footer>
+  <script>
 
-<script>
+    const form = document.querySelector('#moreProperty');
+    const cards = document.querySelector('#addPropertySpace');
+    let number = 7;
+    
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
 
-  const form = document.querySelector('#moreProperty');
-  const cards = document.querySelector('#addPropertySpace');
-  let number = 7;
-  
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    let data = {
-      address: form.address.value,
-      inspection: form.inspection.value,
-      image_path: form.image_path.value,
-      agentName: form.agentName.value,
-      bed: parseInt(form.bed.value),
-      shower: parseInt(form.shower.value),
-      car: parseInt(form.car.value)
-    }
-    fetch('http://localhost:3000/moreproperty?id=' + number,{
-      method: 'POST',
-      headers: {
-        'Content-Type':'application/json',
-      },
-      body: JSON.stringify(data),
+      let data = {
+        address: form.address.value,
+        inspection: form.inspection.value,
+        image_path: form.image_path.value,
+        agentName: form.agentName.value,
+        bed: parseInt(form.bed.value),
+        shower: parseInt(form.shower.value),
+        car: parseInt(form.car.value)
+      }
+      fetch('http://localhost:3000/moreproperty?id=' + number,{
+        method: 'POST',
+        headers: {
+          'Content-Type':'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+        .then(response => response.text())
+        .then(text => {
+          cards.insertAdjacentHTML('beforeend', text);
+          form.reset();
+          number++;
+        })
+        .catch((error) => {
+          console.log('Error: '+ error);
+        })
     })
-      .then(response => response.text())
-      .then(text => {
-        cards.insertAdjacentHTML('beforeend', text);
-        form.reset();
-        number++;
-      })
-      .catch((error) => {
-        console.log('Error: '+ error);
-      })
-  })
-
-
-
-</script>
+  </script>
 </body>
 </html> 
 
